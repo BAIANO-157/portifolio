@@ -1,143 +1,133 @@
-/* ==========================================================================
-   PORTFÓLIO DEV - LUCCAS PAULO MONGE JUSTO
-   JavaScript Vanilla (Didático para 1º Ano Técnico em Informática)
-   ========================================================================== */
+/* ==========================================
+   VARIÁVEIS E SELETORES DO DOM
+   ================================---------- */
+const botaoAlternarTema = document.getElementById('botao-alternar-tema');
+const iconeTema = document.getElementById('icone-tema');
+const htmlDocumento = document.documentElement;
 
-document.addEventListener('DOMContentLoaded', () => {
+const botaoHamburguer = document.getElementById('botao-hamburguer');
+const menuNavegacao = document.getElementById('menu-navegacao');
+const linksMenu = document.querySelectorAll('.link-menu');
 
-  /* ------------------------------------------------------------------------
-     1. TEMA ESCURO E CLARO (DARK / LIGHT MODE)
-     ------------------------------------------------------------------------ */
-  const botaoTema = document.getElementById('botao-tema');
-  const elementoHtml = document.documentElement;
+const elementoMaquina = document.getElementById('elemento-maquina');
+const botaoTopo = document.getElementById('botao-topo');
+const spanAnoAtual = document.getElementById('ano-atual');
 
-  // Busca o tema preferido salvo no navegador
-  const temaSalvo = localStorage.getItem('tema_portfolio') || 'escuro';
-  elementoHtml.setAttribute('data-tema', temaSalvo);
+/* ==========================================
+   1. SISTEMA DE TEMA (CLARO / ESCURO) COM LOCALSTORAGE
+   ================================---------- */
+// Verificar preferência salva no navegador ao carregar a página
+const temaSalvo = localStorage.getItem('tema_portfolio');
+if (temaSalvo) {
+    htmlDocumento.setAttribute('data-tema', temaSalvo);
+    atualizarIconeTema(temaSalvo);
+}
 
-  function alternarTema() {
-    const temaAtual = elementoHtml.getAttribute('data-tema');
+// Evento de clique para alternar o tema
+botaoAlternarTema.addEventListener('click', () => {
+    const temaAtual = htmlDocumento.getAttribute('data-tema');
     const novoTema = temaAtual === 'escuro' ? 'claro' : 'escuro';
-    
-    elementoHtml.setAttribute('data-tema', novoTema);
+
+    htmlDocumento.setAttribute('data-tema', novoTema);
     localStorage.setItem('tema_portfolio', novoTema);
-  }
+    atualizarIconeTema(novoTema);
+});
 
-  if (botaoTema) {
-    botaoTema.addEventListener('click', alternarTema);
-  }
+// Função auxiliar para trocar o ícone do botão de tema
+function atualizarIconeTema(tema) {
+    if (tema === 'claro') {
+        iconeTema.className = 'bi bi-sun-fill';
+    } else {
+        iconeTema.className = 'bi bi-moon-fill';
+    }
+}
 
+/* ==========================================
+   2. MENU HAMBÚRGUER (MOBILE)
+   ================================---------- */
+botaoHamburguer.addEventListener('click', () => {
+    menuNavegacao.classList.toggle('ativo');
+    const iconeMenu = botaoHamburguer.querySelector('i');
+    
+    if (menuNavegacao.classList.contains('ativo')) {
+        iconeMenu.className = 'bi bi-x-lg';
+    } else {
+        iconeMenu.className = 'bi bi-list';
+    }
+});
 
-  /* ------------------------------------------------------------------------
-     2. MENU HAMBÚRGUER RESPONSIVO (MOBILE)
-     ------------------------------------------------------------------------ */
-  const botaoMenuMobile = document.getElementById('botao-menu-mobile');
-  const menuNavegacao = document.getElementById('menu-navegacao');
-  const linksNavegacao = document.querySelectorAll('.link-navegacao');
-
-  if (botaoMenuMobile && menuNavegacao) {
-    botaoMenuMobile.addEventListener('click', () => {
-      menuNavegacao.classList.toggle('aberto');
+// Fechar menu ao clicar em qualquer link de navegação
+linksMenu.forEach(link => {
+    link.addEventListener('click', () => {
+        menuNavegacao.classList.remove('ativo');
+        botaoHamburguer.querySelector('i').className = 'bi bi-list';
     });
+});
 
-    linksNavegacao.forEach(link => {
-      link.addEventListener('click', () => {
-        menuNavegacao.classList.remove('aberto');
-      });
-    });
-  }
+/* ==========================================
+   3. EFEITO MÁQUINA DE ESCREVER (TYPING EFFECT)
+   ================================---------- */
+const palavrasTexto = [
+    'Estudante de Desenvolvimento Full Stack',
+    'Desenvolvedor Front-end',
+    'Entusiasta de Tecnologia e Inovação'
+];
 
+let indicePalavraAtual = 0;
+let indiceCaractereAtual = 0;
+let estaApagando = false;
+let velocidadeDigitacao = 100;
 
-  /* ------------------------------------------------------------------------
-     3. EFEITO MÁQUINA DE ESCREVER (TYPING EFFECT)
-     ------------------------------------------------------------------------ */
-  const elementoMaquina = document.getElementById('texto-maquina-escrever');
-  const frases = [
-    'Estudante Full Stack',
-    'Especialista Front-end em Formação',
-    'HTML5, CSS3 & JavaScript Vanilla',
-    'SESC ESCOLA & SENAC (2026)'
-  ];
-
-  let indiceFrase = 0;
-  let indiceCaractere = 0;
-  let estaApagando = false;
-
-  function executarEfeitoMaquina() {
-    if (!elementoMaquina) return;
-
-    const fraseAtual = frases[indiceFrase];
+function executarMaquinaDeEscrever() {
+    const palavraCompleta = palavrasTexto[indicePalavraAtual];
 
     if (estaApagando) {
-      elementoMaquina.textContent = fraseAtual.substring(0, indiceCaractere - 1);
-      indiceCaractere--;
+        elementoMaquina.textContent = palavraCompleta.substring(0, indiceCaractereAtual - 1);
+        indiceCaractereAtual--;
+        velocidadeDigitacao = 50;
     } else {
-      elementoMaquina.textContent = fraseAtual.substring(0, indiceCaractere + 1);
-      indiceCaractere++;
+        elementoMaquina.textContent = palavraCompleta.substring(0, indiceCaractereAtual + 1);
+        indiceCaractereAtual++;
+        velocidadeDigitacao = 100;
     }
 
-    let tempoEspera = estaApagando ? 50 : 100;
-
-    if (!estaApagando && indiceCaractere === fraseAtual.length) {
-      tempoEspera = 2000; // Tempo de pausa com o texto completo
-      estaApagando = true;
-    } else if (estaApagando && indiceCaractere === 0) {
-      estaApagando = false;
-      indiceFrase = (indiceFrase + 1) % frases.length;
-      tempoEspera = 500;
+    // Quando terminar de digitar a palavra inteira
+    if (!estaApagando && indiceCaractereAtual === palavraCompleta.length) {
+        estaApagando = true;
+        velocidadeDigitacao = 2000; // Pausa antes de começar a apagar
+    } 
+    // Quando terminar de apagar a palavra
+    else if (estaApagando && indiceCaractereAtual === 0) {
+        estaApagando = false;
+        indicePalavraAtual = (indicePalavraAtual + 1) % palavrasTexto.length;
+        velocidadeDigitacao = 500;
     }
 
-    setTimeout(executarEfeitoMaquina, tempoEspera);
-  }
+    setTimeout(executarMaquinaDeEscrever, velocidadeDigitacao);
+}
 
-  executarEfeitoMaquina();
+// Iniciar efeito ao carregar a página
+document.addEventListener('DOMContentLoaded', executarMaquinaDeEscrever);
 
-
-  /* ------------------------------------------------------------------------
-     4. BOTÃO VOLTAR AO TOPO & ANO AUTOMÁTICO
-     ------------------------------------------------------------------------ */
-  const botaoVoltarTopo = document.getElementById('botao-voltar-topo');
-  const elementoAnoAtual = document.getElementById('ano-atual');
-
-  if (elementoAnoAtual) {
-    elementoAnoAtual.textContent = new Date().getFullYear();
-  }
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      botaoVoltarTopo.classList.add('visivel');
+/* ==========================================
+   4. BOTÃO "VOLTAR AO TOPO" & SCROLL SUAVE
+   ================================---------- */
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        botaoTopo.classList.add('visivel');
     } else {
-      botaoVoltarTopo.classList.remove('visivel');
+        botaoTopo.classList.remove('visivel');
     }
-  });
+});
 
-  if (botaoVoltarTopo) {
-    botaoVoltarTopo.addEventListener('click', () => {
-      window.scrollTo({
+botaoTopo.addEventListener('click', () => {
+    window.scrollTo({
         top: 0,
         behavior: 'smooth'
-      });
     });
-  }
-
-
-  /* ------------------------------------------------------------------------
-     5. ANIMAÇÃO DE ENTRADA AO ROLAR A PÁGINA
-     ------------------------------------------------------------------------ */
-  const elementosRevelacao = document.querySelectorAll('.revelacao');
-
-  const observadorScroll = new IntersectionObserver((entradas) => {
-    entradas.forEach(entrada => {
-      if (entrada.isIntersecting) {
-        entrada.target.classList.add('ativo');
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  elementosRevelacao.forEach(elemento => {
-    observadorScroll.observe(elemento);
-  });
-
 });
+
+/* ==========================================
+   5. ANO DINÂMICO NO RODAPÉ
+   ================================---------- */
+spanAnoAtual.textContent = new Date().getFullYear();
