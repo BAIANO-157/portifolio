@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="escuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luccas Paulo Monge Justo | Desenvolvedor Full Stack</title>
+  
+  <!-- Importação das Fontes do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Ícones do Bootstrap Icons via CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Vínculo com o arquivo de estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO E NAVEGAÇÃO -->
+  <header class="cabecalho" id="cabecalho">
+    <div class="conteiner cabecalho-conteiner">
+      <a href="#inicio" class="logotipo">
+        <span class="simbolo-tag">&lt;</span>LuccasMonge<span class="simbolo-tag">/&gt;</span>
+      </a>
+
+      <!-- Menu Principal -->
+      <nav class="menu-navegacao" id="menu-navegacao">
+        <ul class="lista-navegacao">
+          <li><a href="#inicio" class="link-navegacao ativo">Início</a></li>
+          <li><a href="#sobre" class="link-navegacao">Sobre</a></li>
+          <li><a href="#educacao" class="link-navegacao">Formação</a></li>
+          <li><a href="#habilidades" class="link-navegacao">Habilidades</a></li>
+          <li><a href="#projetos" class="link-navegacao">Projetos</a></li>
+          <li><a href="#contato" class="link-navegacao">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="acoes-cabecalho">
+        <!-- Botão para alternar entre Dark Mode e Light Mode -->
+        <button id="botao-tema" class="botao-tema" aria-label="Alternar tema de cores">
+          <i class="bi bi-moon-stars-fill icone-lua"></i>
+          <i class="bi bi-sun-fill icone-sol"></i>
+        </button>
+
+        <!-- Botão Hambúrguer para Telas Menores/Mobile -->
+        <button id="botao-menu-mobile" class="botao-menu-mobile" aria-label="Abrir menu de navegação">
+          <span class="linha-hamburguer"></span>
+          <span class="linha-hamburguer"></span>
+          <span class="linha-hamburguer"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SEÇÃO HERO / APRESENTAÇÃO INICIAL -->
+    <section class="secao-hero" id="inicio">
+      <div class="conteiner hero-conteiner">
+        <div class="hero-conteudo revelacao">
+          <div class="selo-status-dev">
+            <span class="ponto-status-ativo"></span>
+            <span>Estudante de TI | SESC & SENAC</span>
+          </div>
+
+          <h1 class="hero-titulo">Olá, eu sou <br><span class="texto-verde-neon">Luccas Paulo Monge Justo</span></h1>
+          
+          <div class="caixa-maquina-escrever">
+            <span class="prefixo-codigo">$</span>
+            <span id="texto-maquina-escrever"></span>
+            <span class="cursor-digitacao">|</span>
+          </div>
+
+          <p class="hero-descricao">
+            Estudante do 1º ano do Ensino Médio Técnico em Informática para Internet. Desenvolvendo aplicações modernas com foco inicial em Front-end e construindo a base para me tornar um Desenvolvedor Full Stack.
+          </p>
+
+          <div class="hero-botoes">
+            <a href="curriculo.pdf" download class="botao botao-primario-verde">
+              <i class="bi bi-file-earmark-arrow-down-fill"></i> Baixar meu CV
+            </a>
+            <a href="#contato" class="botao botao-secundario-verde">
+              <i class="bi bi-chat-dots-fill"></i> Vamos Conversar
+            </a>
+          </div>
+        </div>
+
+        <!-- SIMULADOR DE IDE / CÓDIGO VISUAL -->
+        <div class="hero-card-codigo revelacao">
+          <div class="cabecalho-janela-codigo">
+            <div class="botoes-janela">
+              <span class="circulo-janela fechar"></span>
+              <span class="circulo-janela minimizar"></span>
+              <span class="circulo-janela expandir"></span>
+            </div>
+            <span class="titulo-janela-codigo">perfil.js</span>
+          </div>
+          <div class="corpo-janela-codigo">
+            <pre><code><span class="palavra-chave">const</span> <span class="nome-variavel">desenvolvedor</span> = {
+  <span class="propriedade">nome</span>: <span class="texto-string">"Luccas Paulo Monge Justo"</span>,
+  <span class="propriedade">instituicao</span>: <span class="texto-string">"SESC Escola / SENAC"</span>,
+  <span class="propriedade">curso</span>: <span class="texto-string">"Técnico em Informática para Internet"</span>,
+  <span class="propriedade">focoAtual</span>: <span class="texto-string">"Front-end Development"</span>,
+  <span class="propriedade">tecnologias</span>: [<span class="texto-string">"HTML5"</span>, <span class="texto-string">"CSS3"</span>, <span class="texto-string">"JavaScript"</span>],
+  <span class="propriedade">objetivo</span>: <span class="texto-string">"1ª Oportunidade em TI"</span>
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE MIM -->
+    <section class="secao secao-sobre" id="sobre">
+      <div class="conteiner">
+        <h2 class="titulo-secao revelacao">Sobre Mim</h2>
+        <div class="cartao-sobre-verde revelacao">
+          <div class="icone-cabecalho-sobre">
+            <i class="bi bi-terminal-box"></i>
+          </div>
+          <h3>Minha Trajetória Profissional e de Estudos</h3>
+          <p>
+            Sou estudante do 1º ano do Ensino Médio Técnico em Informática para Internet pela <strong>SESC Escola</strong>, em parceria com o <strong>SENAC</strong>. Com forte foco em programação, iniciei minha trilha de aprendizado me especializando em desenvolvimento Front-end.
+          </p>
+          <p>
+            Nos próximos anos, minha formação se expandirá para o Back-end (2º ano) e desenvolvimento Mobile (3º ano), construindo uma base sólida para me tornar um Desenvolvedor Full Stack de alta performance.
+          </p>
+          <p class="destaque-pessoal-verde">
+            <i class="bi bi-lightning-charge-fill"></i> Sou apaixonado por criar interfaces interativas, escrever código limpo e busco minha primeira oportunidade na área de tecnologia para evoluir continuamente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO EDUCAÇÃO & ROADMAP -->
+    <section class="secao secao-educacao" id="educacao">
+      <div class="conteiner">
+        <h2 class="titulo-secao revelacao">Formação & Trilha do Curso</h2>
+        <p class="subtitulo-secao revelacao">Roadmap do Ensino Médio Técnico SESC ESCOLA / SENAC (Conclusão: 2026)</p>
+
+        <div class="cartao-roadmap-principal revelacao">
+          <div class="cabecalho-roadmap">
+            <div class="selo-excelencia">
+              <i class="bi bi-shield-check"></i> Parceria de Excelência SESC ESCOLA & SENAC
+            </div>
+            <span class="tag-previsao">Previsão: 2026</span>
+          </div>
+
+          <!-- LINHA DO TEMPO DA FORMACÃO -->
+          <div class="linha-do-tempo">
+            <div class="etapa-linha em-andamento">
+              <div class="no-linha">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <div class="conteudo-etapa-linha">
+                <div class="cabecalho-etapa">
+                  <span class="badge-foco atual">1º Ano — Em Andamento</span>
+                  <h4>Especialização Front-end</h4>
+                </div>
+                <p>Construção de páginas modernas, semântica HTML5, estilização avançada com CSS3 puro (Flexbox/Grid), JavaScript Vanilla e raciocínio lógico em Algoritmos.</p>
+              </div>
+            </div>
+
+            <div class="etapa-linha futuro">
+              <div class="no-linha">
+                <i class="bi bi-database-gear"></i>
+              </div>
+              <div class="conteudo-etapa-linha">
+                <div class="cabecalho-etapa">
+                  <span class="badge-foco proximo">2º Ano — Próximo Passo</span>
+                  <h4>Desenvolvimento Back-end</h4>
+                </div>
+                <p>Estruturação de bancos de dados relacionais e não relacionais, criação de APIs RESTful e lógica de servidores.</p>
+              </div>
+            </div>
+
+            <div class="etapa-linha futuro">
+              <div class="no-linha">
+                <i class="bi bi-phone"></i>
+              </div>
+              <div class="conteudo-etapa-linha">
+                <div class="cabecalho-etapa">
+                  <span class="badge-foco futuro">3º Ano — Futuro</span>
+                  <h4>Desenvolvimento Mobile</h4>
+                </div>
+                <p>Criação e publicação de aplicativos móveis nativos e híbridos com foco em experiência do usuário (UX/UI).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO HABILIDADES -->
+    <section class="secao secao-habilidades" id="habilidades">
+      <div class="conteiner">
+        <h2 class="titulo-secao revelacao">Hard Skills</h2>
+        <div class="grid-habilidades">
+          <div class="cartao-skill revelacao">
+            <i class="bi bi-filetype-html icone-skill"></i>
+            <h3>HTML5</h3>
+            <p>Semântica e Acessibilidade</p>
+          </div>
+          <div class="cartao-skill revelacao">
+            <i class="bi bi-filetype-css icone-skill"></i>
+            <h3>CSS3</h3>
+            <p>Layouts Responsivos e Animações</p>
+          </div>
+          <div class="cartao-skill revelacao">
+            <i class="bi bi-filetype-js icone-skill"></i>
+            <h3>JavaScript</h3>
+            <p>Manipulação de DOM & JS Vanilla</p>
+          </div>
+          <div class="cartao-skill revelacao">
+            <i class="bi bi-cpu icone-skill"></i>
+            <h3>Lógica e Algoritmos</h3>
+            <p>Resolução Eficiente de Problemas</p>
+          </div>
+          <div class="cartao-skill revelacao">
+            <i class="bi bi-git icone-skill"></i>
+            <h3>Git</h3>
+            <p>Controle de Versão e Commits</p>
+          </div>
+          <div class="cartao-skill revelacao">
+            <i class="bi bi-github icone-skill"></i>
+            <h3>GitHub</h3>
+            <p>Repositórios e Colaboração</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO PORTFÓLIO E ESTUDOS -->
+    <section class="secao secao-projetos" id="projetos">
+      <div class="conteiner">
+        <h2 class="titulo-secao revelacao">Portfólio & Estudos</h2>
+
+        <!-- Subseção A: Projetos de Destaque -->
+        <div class="subsecao-bloco">
+          <h3 class="subtitulo-secao-verde revelacao"><i class="bi bi-star-fill"></i> Projetos de Destaque</h3>
+          <div class="grid-projetos-principais">
+            
+            <!-- Projeto 1 -->
+            <article class="cartao-projeto-verde revelacao">
+              <div class="capa-projeto">
+                <i class="bi bi-calculator"></i>
+              </div>
+              <div class="conteudo-projeto-verde">
+                <h4>Calculadora de IMC Interativa</h4>
+                <p>Aplicação interativa desenvolvida nas aulas de lógica de programação para calcular o Índice de Massa Corporal com respostas imediatas.</p>
+                <div class="tags-tecnologias">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>JavaScript</span>
+                </div>
+                <div class="botoes-projeto">
+                  <a href="https://lucasmonge.github.io/calculadora-imc" target="_blank" class="link-projeto-btn">
+                    <i class="bi bi-box-arrow-up-right"></i> Deploy
+                  </a>
+                  <a href="https://github.com/lucasmonge/calculadora-imc" target="_blank" class="link-projeto-btn secundario">
+                    <i class="bi bi-github"></i> Código
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Projeto 2 -->
+            <article class="cartao-projeto-verde revelacao">
+              <div class="capa-projeto">
+                <i class="bi bi-grid-3x3-gap-fill"></i>
+              </div>
+              <div class="conteudo-projeto-verde">
+                <h4>Jogo da Velha (Tic-Tac-Toe)</h4>
+                <p>Jogo clássico interativo com controle de turnos, contagem de pontos e verificação automática de condições de vitória/empate.</p>
+                <div class="tags-tecnologias">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>JavaScript</span>
+                </div>
+                <div class="botoes-projeto">
+                  <a href="https://lucasmonge.github.io/jogo-da-velha" target="_blank" class="link-projeto-btn">
+                    <i class="bi bi-box-arrow-up-right"></i> Deploy
+                  </a>
+                  <a href="https://github.com/lucasmonge/jogo-da-velha" target="_blank" class="link-projeto-btn secundario">
+                    <i class="bi bi-github"></i> Código
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Subseção B: Repositórios de Estudo -->
+        <div class="subsecao-bloco">
+          <h3 class="subtitulo-secao-verde revelacao"><i class="bi bi-journal-bookmark-fill"></i> Repositórios de Estudo</h3>
+          <div class="grid-repositorios-estudo">
+            
+            <a href="https://github.com/lucasmonge/trilha-html-css" target="_blank" class="cartao-estudo-item revelacao">
+              <i class="bi bi-filetype-html icone-estudo-verde"></i>
+              <div class="info-estudo-texto">
+                <h4>Trilha de HTML e CSS</h4>
+                <p>Exercícios de estrutura semântica, Flexbox, CSS Grid e responsividade.</p>
+              </div>
+              <i class="bi bi-chevron-right seta-link"></i>
+            </a>
+
+            <a href="https://github.com/lucasmonge/trilha-javascript" target="_blank" class="cartao-estudo-item revelacao">
+              <i class="bi bi-filetype-js icone-estudo-verde"></i>
+              <div class="info-estudo-texto">
+                <h4>Trilha de JavaScript Vanilla</h4>
+                <p>Anotações de aula, funções, manipulação de eventos e lógica de programação.</p>
+              </div>
+              <i class="bi bi-chevron-right seta-link"></i>
+            </a>
+
+            <a href="https://github.com/lucasmonge/logica-portugol" target="_blank" class="cartao-estudo-item revelacao">
+              <i class="bi bi-code-square icone-estudo-verde"></i>
+              <div class="info-estudo-texto">
+                <h4>Lógica e Algoritmos (Portugol)</h4>
+                <p>Exercícios iniciais de raciocínio computacional desenvolvidos em sala.</p>
+              </div>
+              <i class="bi bi-chevron-right seta-link"></i>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO -->
+    <section class="secao secao-contato" id="contato">
+      <div class="conteiner">
+        <h2 class="titulo-secao revelacao">Vamos Conversar?</h2>
+        <p class="subtitulo-secao revelacao">Conecte-se comigo diretamente através das redes abaixo:</p>
+
+        <div class="grid-contatos-cards">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/5500000000000" target="_blank" class="card-contato whatsapp revelacao">
+            <i class="bi bi-whatsapp icone-rede"></i>
+            <span class="nome-rede-social">WhatsApp</span>
+            <span class="dica-rede">Conversa Direta</span>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/lucaspaulomongejusto" target="_blank" class="card-contato linkedin revelacao">
+            <i class="bi bi-linkedin icone-rede"></i>
+            <span class="nome-rede-social">LinkedIn</span>
+            <span class="dica-rede">Perfil Profissional</span>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/lucasmonge" target="_blank" class="card-contato github revelacao">
+            <i class="bi bi-github icone-rede"></i>
+            <span class="nome-rede-social">GitHub</span>
+            <span class="dica-rede">Meus Códigos</span>
+          </a>
+
+          <!-- E-mail -->
+          <a href="mailto:mongelucas@gmail.com" target="_blank" class="card-contato email revelacao">
+            <i class="bi bi-envelope-fill icone-rede"></i>
+            <span class="nome-rede-social">E-mail</span>
+            <span class="dica-rede">mongelucas@gmail.com</span>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/lucasmonge" target="_blank" class="card-contato instagram revelacao">
+            <i class="bi bi-instagram icone-rede"></i>
+            <span class="nome-rede-social">Instagram</span>
+            <span class="dica-rede">Acompanhe a Rotina</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="conteiner rodape-conteiner">
+      <p>
+        Copyright &copy; <span id="ano-atual"></span> | Desenvolvido com <i class="bi bi-heart-fill icone-coracao-verde"></i> por <strong>Luccas Paulo Monge Justo</strong>
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="botao-voltar-topo" class="botao-voltar-topo" aria-label="Voltar ao topo da página">
+    <i class="bi bi-arrow-up-short"></i>
+  </button>
+
+  <!-- Inclusão do arquivo JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
