@@ -7,28 +7,28 @@
 
 /* TEMA ESCURO (Padrão Inicial) */
 [data-tema="escuro"] {
-    --fundo-principal: #0F0B1A;
-    --fundo-secundario: #161026;
-    --fundo-card: #1E1533;
-    --texto-principal: #E2D9F3;
-    --texto-secundario: #B3A4D4;
-    --cor-primaria: #9D4EDD;
-    --cor-primaria-hover: #C77DFF;
-    --sombra-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-    --borda-card: rgba(157, 78, 221, 0.2);
+    --fundo-principal: #121a0b;
+    --fundo-secundario: #1a2610;
+    --fundo-card: #1b3315;
+    --texto-principal: #ffffff;
+    --texto-secundario: #fdfafa;
+    --cor-primaria: hsl(51, 90%, 55%);
+    --cor-primaria-hover: #fff27d;
+    --sombra-card: 0 8px 32px rgba(0, 0, 0, 0.54);
+    --borda-card: rgba(221, 219, 78, 0.2);
 }
 
 /* TEMA CLARO */
 [data-tema="claro"] {
-    --fundo-principal: #F8F5FC;
+    --fundo-principal: #f8f5fc;
     --fundo-secundario: #EFEAF7;
     --fundo-card: #FFFFFF;
-    --texto-principal: #1F142E;
-    --texto-secundario: #5A4B75;
-    --cor-primaria: #7B2CBF;
-    --cor-primaria-hover: #9D4EDD;
-    --sombra-card: 0 8px 24px rgba(123, 44, 191, 0.08);
-    --borda-card: rgba(123, 44, 191, 0.15);
+    --texto-principal: #6d6b07;
+    --texto-secundario: #71754b;
+    --cor-primaria: #bfa42c;
+    --cor-primaria-hover: #e6d67e;
+    --sombra-card: 0 8px 24px rgba(191, 157, 44, 0.08);
+    --borda-card: rgba(191, 169, 44, 0.15);
 }
 
 /* ESTILIZAÇÃO DA SCROLLBAR */
@@ -78,7 +78,7 @@ body {
     left: 0;
     width: 100%;
     background-color: var(--fundo-secundario);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: var(--transicao-suave);
 }
@@ -227,7 +227,7 @@ body {
 .botao-primario:hover {
     background-color: var(--cor-primaria-hover);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(157, 78, 221, 0.3);
+    box-shadow: 0 10px 20px rgba(218, 189, 28, 0.3);
 }
 
 .botao-secundario {
@@ -398,7 +398,7 @@ section {
 
 .timeline-item.ativo {
     border-color: var(--cor-primaria);
-    box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);
+    box-shadow: 0 0 15px rgba(235, 223, 66, 0.2);
 }
 
 .timeline-item:hover {
