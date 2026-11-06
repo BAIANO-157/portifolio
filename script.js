@@ -16,14 +16,12 @@ const spanAnoAtual = document.getElementById('ano-atual');
 /* ==========================================
    1. SISTEMA DE TEMA (CLARO / ESCURO) COM LOCALSTORAGE
    ================================---------- */
-// Verificar preferência salva no navegador ao carregar a página
 const temaSalvo = localStorage.getItem('tema_portfolio');
 if (temaSalvo) {
     htmlDocumento.setAttribute('data-tema', temaSalvo);
     atualizarIconeTema(temaSalvo);
 }
 
-// Evento de clique para alternar o tema
 botaoAlternarTema.addEventListener('click', () => {
     const temaAtual = htmlDocumento.getAttribute('data-tema');
     const novoTema = temaAtual === 'escuro' ? 'claro' : 'escuro';
@@ -33,7 +31,6 @@ botaoAlternarTema.addEventListener('click', () => {
     atualizarIconeTema(novoTema);
 });
 
-// Função auxiliar para trocar o ícone do botão de tema
 function atualizarIconeTema(tema) {
     if (tema === 'claro') {
         iconeTema.className = 'bi bi-sun-fill';
@@ -56,7 +53,6 @@ botaoHamburguer.addEventListener('click', () => {
     }
 });
 
-// Fechar menu ao clicar em qualquer link de navegação
 linksMenu.forEach(link => {
     link.addEventListener('click', () => {
         menuNavegacao.classList.remove('ativo');
@@ -91,12 +87,10 @@ function executarMaquinaDeEscrever() {
         velocidadeDigitacao = 100;
     }
 
-    // Quando terminar de digitar a palavra inteira
     if (!estaApagando && indiceCaractereAtual === palavraCompleta.length) {
         estaApagando = true;
-        velocidadeDigitacao = 2000; // Pausa antes de começar a apagar
+        velocidadeDigitacao = 2000;
     } 
-    // Quando terminar de apagar a palavra
     else if (estaApagando && indiceCaractereAtual === 0) {
         estaApagando = false;
         indicePalavraAtual = (indicePalavraAtual + 1) % palavrasTexto.length;
@@ -106,7 +100,6 @@ function executarMaquinaDeEscrever() {
     setTimeout(executarMaquinaDeEscrever, velocidadeDigitacao);
 }
 
-// Iniciar efeito ao carregar a página
 document.addEventListener('DOMContentLoaded', executarMaquinaDeEscrever);
 
 /* ==========================================
@@ -130,4 +123,6 @@ botaoTopo.addEventListener('click', () => {
 /* ==========================================
    5. ANO DINÂMICO NO RODAPÉ
    ================================---------- */
-spanAnoAtual.textContent = new Date().getFullYear();
+if (spanAnoAtual) {
+    spanAnoAtual.textContent = new Date().getFullYear();
+}
