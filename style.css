@@ -5,7 +5,7 @@
     --transicao-suave: all 0.3s ease;
 }
 
-/* TEMA ESCURO (Padrão Inicial) */
+/* TEMA ESCURO */
 [data-tema="escuro"] {
     --fundo-principal: #121a0b;
     --fundo-secundario: #1a2610;
@@ -31,7 +31,7 @@
     --borda-card: rgba(191, 169, 44, 0.15);
 }
 
-/* ESTILIZAÇÃO DA SCROLLBAR */
+/* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -46,7 +46,7 @@
     background: var(--cor-primaria-hover);
 }
 
-/* RESET BÁSICO */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -270,7 +270,7 @@ body {
 }
 
 /* ==========================================
-   ESTILOS DE TÍTULOS DE SEÇÃO
+   TÍTULOS DE SEÇÃO
    ================================---------- */
 .secao-titulo {
     text-align: center;
@@ -596,7 +596,7 @@ section {
     filter: brightness(1.15);
 }
 
-/* Repositórios Menores */
+/* REPOSITÓRIOS */
 .grid-repositorios {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -646,7 +646,7 @@ section {
 }
 
 /* ==========================================
-   SEÇÃO CONTATO & REDES SOCIAIS
+   SEÇÃO CONTATO
    ================================---------- */
 .grid-contatos {
     display: grid;
@@ -686,35 +686,19 @@ section {
     word-break: break-all;
 }
 
-/* Hovers Personalizados por Rede */
-.card-contato.email:hover {
-    border-color: #EA4335;
-    background-color: rgba(234, 67, 53, 0.05);
-}
+.card-contato.email:hover { border-color: #EA4335; background-color: rgba(234, 67, 53, 0.05); }
 .card-contato.email:hover i { color: #EA4335; }
 
-.card-contato.whatsapp:hover {
-    border-color: #25D366;
-    background-color: rgba(37, 211, 102, 0.05);
-}
+.card-contato.whatsapp:hover { border-color: #25D366; background-color: rgba(37, 211, 102, 0.05); }
 .card-contato.whatsapp:hover i { color: #25D366; }
 
-.card-contato.instagram:hover {
-    border-color: #E1306C;
-    background-color: rgba(225, 48, 108, 0.05);
-}
+.card-contato.instagram:hover { border-color: #E1306C; background-color: rgba(225, 48, 108, 0.05); }
 .card-contato.instagram:hover i { color: #E1306C; }
 
-.card-contato.linkedin:hover {
-    border-color: #0A66C2;
-    background-color: rgba(10, 102, 194, 0.05);
-}
+.card-contato.linkedin:hover { border-color: #0A66C2; background-color: rgba(10, 102, 194, 0.05); }
 .card-contato.linkedin:hover i { color: #0A66C2; }
 
-.card-contato.github:hover {
-    border-color: #8b949e;
-    background-color: rgba(139, 148, 158, 0.05);
-}
+.card-contato.github:hover { border-color: #8b949e; background-color: rgba(139, 148, 158, 0.05); }
 .card-contato.github:hover i { color: #8b949e; }
 
 .card-contato:hover {
@@ -772,9 +756,7 @@ section {
     transform: translateY(-3px);
 }
 
-/* ==========================================
-   RESPONSIVIDADE (MEDIA QUERIES)
-   ================================---------- */
+/* RESPONSIVIDADE */
 @media (max-width: 992px) {
     .hero-container {
         grid-template-columns: 1fr;
