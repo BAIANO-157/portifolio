@@ -14,7 +14,7 @@ const botaoTopo = document.getElementById('botao-topo');
 const spanAnoAtual = document.getElementById('ano-atual');
 
 /* ==========================================
-   1. SISTEMA DE TEMA (CLARO / ESCURO) COM LOCALSTORAGE
+   1. SISTEMA DE TEMA
    ================================---------- */
 const temaSalvo = localStorage.getItem('tema_portfolio');
 if (temaSalvo) {
@@ -40,7 +40,7 @@ function atualizarIconeTema(tema) {
 }
 
 /* ==========================================
-   2. MENU HAMBÚRGUER (MOBILE)
+   2. MENU MOBILE
    ================================---------- */
 botaoHamburguer.addEventListener('click', () => {
     menuNavegacao.classList.toggle('ativo');
@@ -61,7 +61,7 @@ linksMenu.forEach(link => {
 });
 
 /* ==========================================
-   3. EFEITO MÁQUINA DE ESCREVER (TYPING EFFECT)
+   3. EFEITO MÁQUINA DE ESCREVER
    ================================---------- */
 const palavrasTexto = [
     'Estudante de Desenvolvimento Full Stack',
@@ -103,7 +103,7 @@ function executarMaquinaDeEscrever() {
 document.addEventListener('DOMContentLoaded', executarMaquinaDeEscrever);
 
 /* ==========================================
-   4. BOTÃO "VOLTAR AO TOPO" & SCROLL SUAVE
+   4. BOTÃO VOLTAR AO TOPO
    ================================---------- */
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
@@ -121,7 +121,7 @@ botaoTopo.addEventListener('click', () => {
 });
 
 /* ==========================================
-   5. ANO DINÂMICO NO RODAPÉ
+   5. ANO DINÂMICO
    ================================---------- */
 if (spanAnoAtual) {
     spanAnoAtual.textContent = new Date().getFullYear();
