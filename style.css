@@ -347,7 +347,7 @@ section {
 }
 
 /* ==========================================
-   SEÇÃO EDUCAÇÃO (TIMELINE / ROADMAP)
+   SEÇÃO EDUCAÇÃO
    ================================---------- */
 .card-educacao-destaque {
     background-color: var(--fundo-secundario);
@@ -480,7 +480,7 @@ section {
 /* ==========================================
    SEÇÃO PROJETOS & REPOSITÓRIOS
    ================================---------- */
-.subsecção-titulo h3, .subsecao-titulo h3 {
+.subsecao-titulo h3 {
     font-size: 1.3rem;
     color: var(--texto-principal);
     margin-bottom: 25px;
@@ -517,14 +517,21 @@ section {
     box-shadow: 0 15px 35px rgba(157, 78, 221, 0.2);
 }
 
-.projeto-imagem-placeholder {
-    height: 180px;
-    background: linear-gradient(135deg, var(--fundo-card), var(--cor-primaria));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
-    color: #FFFFFF;
+.projeto-imagem-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.projeto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicao-suave);
+}
+
+.card-projeto:hover .projeto-img {
+    transform: scale(1.05);
 }
 
 .projeto-info {
